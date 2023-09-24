@@ -2,5 +2,7 @@
 
 <h1>
   EN813701 Web Application Development Projects 2023
-  <WAD23-05>. <NameThatVerse>
 </h1>
+<p>
+  <WAD23-05>. <NameThatVerse>
+</p>
