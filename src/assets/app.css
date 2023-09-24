@@ -1,0 +1,109 @@
+.app {
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(45deg, rgba(2,0,36,1) 2%, rgba(59,27,112,1) 51%, rgba(44,63,207,1) 100%);
+    color: white;
+}
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.top {
+    height: 50%;
+}
+.bottom {
+    height: 50%;
+}
+.timer {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: auto;
+}
+.trivia{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.question{
+    width: 80%;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);;
+    border: 2px solid white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+.answers{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.answer{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    padding: 10px;    
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,225,29,0.9767981438515081) 100%, rgba(252,176,69,1) 100%);
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 10px 20px 10px;
+    cursor: pointer;
+}
+.answer:hover,.answer.active {
+    background: linear-gradient(106deg, rgba(131,58,180,1) 0%, rgba(29,245,253,0.9767981438515081) 100%, rgba(252,176,69,1) 100%);
+}
+.answer.correct {
+    animation: correct 2s ease forwards;
+  }
+  
+    @keyframes correct {
+    0%,
+    22%,
+    42% {
+      background: mediumblue;
+    }
+    20%,
+    40%,
+    60% {
+      background: linear-gradient(#0e0124, #22074d);
+    }
+    62%,
+    100% {
+      background: green;
+    }
+  }
+  .answer.wrong {
+    animation: wrong 2s ease forwards;
+  }
+  
+  @keyframes wrong {
+    0%,
+    22%,
+    42% {
+      background: mediumblue;
+    }
+    20%,
+    40%,
+    60% {
+      background: linear-gradient(#0e0124, #22074d);
+    }
+    62%,
+    100% {
+      background: crimson;
+    }
+  }
