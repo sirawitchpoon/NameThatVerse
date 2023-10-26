@@ -10,10 +10,9 @@ export default function Sidebar() {
         <div className="logo">
           <img
             src="https://www.coolgenerator.com/Data/Textdesign/202309/6fa9ce1780f20c606413b25460ab8578.png"
-            alt="spotify"
+            alt="namethatverse_logo"
           />
         </div>
-        
       </div>
       <Playlists />
     </Container>

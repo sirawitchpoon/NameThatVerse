@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Login() {
-  const handleClick = async () => {
+  const handleLoginClick = async () => {
     const client_id = "9c4c386dc61444c4979955c04e234f9d";
     const redirect_uri = "http://localhost:3000";
     const api_uri = "https://accounts.spotify.com/authorize";
@@ -25,7 +26,10 @@ export default function Login() {
         src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Black.png"
         alt="spotify"
       />
-      <button onClick={handleClick}>Connect Spotify</button>
+      <button className="buttonMain" onClick={handleLoginClick}>Music Streaming <br /> <i>(Require Spotify login)</i></button>
+      <Link to="/game">
+      <button className="buttonGame">Song Guesser Game</button>
+      </Link>
     </Container>
   );
 }
@@ -51,4 +55,8 @@ const Container = styled.div`
     font-size: 1.4rem;
     cursor: pointer;
   }
+  i {
+    font-size: 1rem;
+  }
+
 `;

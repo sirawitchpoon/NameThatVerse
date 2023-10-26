@@ -1,9 +1,10 @@
-import "./assets/app.css";
-import Trivia from "./component/Trivia";
-import Timer from "./component/Timer";
+import React from "react";
 import { useState } from "react"
+import Timer from "./Timer";
+import Trivia from "./Trivia";
+import './../assets/Game.css';
 
-function App() {
+export default function Game() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [timeOut, setTimeOut] = useState(false);
   const [showStartPage, setShowStartPage] = useState(true);
@@ -112,8 +113,6 @@ function App() {
     </div>
   );
 }
-
-export default App;
 
 function StartPage({ startGame }) {
   return (
