@@ -129,6 +129,139 @@ export default function Game() {
         },
       ],
     },
+    {
+      id: 6,
+      question: "6. What's the name of the song ?",
+      answers: [
+        {
+          text: "Daler Mehndi",
+          correct: false,
+        },
+        {
+          text: "Tunak Tunak Tun",
+          correct: true,
+        },
+        {
+          text: "Rusputin",
+          correct: false,
+        },
+        {
+          text: "Trut Trut",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 7,
+      question: "7. What's the name of the song ?",
+      answers: [
+        {
+          text: "White Tee",
+          correct: true,
+        },
+        {
+          text: "Star Boy",
+          correct: false,
+        },
+        {
+          text: "RIZZZZZZZZZZ",
+          correct: false,
+        },
+        {
+          text: "Double Take",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 8,
+      question: "8. What's the name of the song ?",
+      answers: [
+        {
+          text: "Kung Fuu",
+          correct: false,
+        },
+        {
+          text: "Dragon Warrior",
+          correct: false,
+        },
+        {
+          text: "Tom",
+          correct: false,
+        },
+        {
+          text: "Ching Chen Hon Chi",
+          correct: true,
+        },
+      ],
+    },
+    {
+      id: 9,
+      question: "9. What's the name of the song ?",
+      answers: [
+        {
+          text: "9MM",
+          correct: true,
+        },
+        {
+          text: "wadadadang",
+          correct: false,
+        },
+        {
+          text: "wadadudung",
+          correct: false,
+        },
+        {
+          text: "10MM",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 10,
+      question: "10. What's the name of the song ?",
+      answers: [
+        {
+          text: "Lion",
+          correct: false,
+        },
+        {
+          text: "Elephant",
+          correct: false,
+        },
+        {
+          text: "Panda",
+          correct: true,
+        },
+        {
+          text: "Zebra",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 11,
+      question: "11. What's the name of the song ?",
+      answers: [
+        {
+          text: "ดาวหางฮัลเลย์",
+          correct: true,
+        },
+        {
+          text: "ดาวหางฮัลลาล",
+          correct: false,
+        },
+        {
+          text: "ดาวหางฮัลโหล",
+          correct: false,
+        },
+        {
+          text: "ดาวหางฮัลเลลูย่า",
+          correct: false,
+        },
+      ],
+    },
+
   ];
 
   return (
