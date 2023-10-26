@@ -2,33 +2,41 @@ import "./assets/app.css";
 import Trivia from "./component/Trivia";
 import Timer from "./component/Timer";
 import { useState } from "react"
-
-
+import Start from "./component/Start";
 
 function App() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [timeOut, setTimeOut] = useState(false);
+  const [isGameStarted, setIsGameStarted] = useState(false); // เพิ่มสถานะเริ่มเกม
+
+  const [isPlayingQuestionSound, setIsPlayingQuestionSound] = useState(false);
+
+  const startGame = () => {
+    setIsGameStarted(true);
+  };
+
+  const [score, setScore] = useState(0);
 
   const data = [
     {
       id: 1,
-      question: " 1 + 1 = ?",
+      question: "What's the name of the song ?",
       answers: [
         {
-          text: "-2",
+          text: "Rick and Morty",
           correct: false,
         },
         {
-          text: "2",
-          correct: true,
+          text: "Ricardo Milos",
+          correct: false,
         },
         {
-          text: "I don't know",
+          text: "Ricko",
           correct: false,
         },
         {
           text: "Rickroll",
-          correct: false,
+          correct: true,
         },
       ],
     },
@@ -37,25 +45,69 @@ function App() {
       question: "What's the name of the song ?",
       answers: [
         {
-          text: "I don't heard anything",
+          text: "Moonlight ",
           correct: true,
         },
         {
-          text: "???",
-          correct: true,
+          text: "Kiss Kiss",
+          correct: false,
         },
         {
-          text: "What's wrong with you",
-          correct: true,
+          text: "I just wanna pen fan you dai bor",
+          correct: false,
         },
         {
           text: "Definitely Rickroll",
-          correct: true,
+          correct: false,
         },
       ],
     },
     {
       id: 3,
+      question: "What's the name of the song ?",
+      answers: [
+        {
+          text: "คนจนละมีสิทธิ์มั้ยคะ",
+          correct: true,
+        },
+        {
+          text: "Rick Roll",
+          correct: false,
+        },
+        {
+          text: "คนรวย",
+          correct: false,
+        },
+        {
+          text: "ซุปเปอร์วาเลนไทน์",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 4,
+      question: "What's the name of the song ?",
+      answers: [
+        {
+          text: "N---a",
+          correct: false,
+        },
+        {
+          text: "still nope",
+          correct: false,
+        },
+        {
+          text: "Yes, why not",
+          correct: true,
+        },
+        {
+          text: "another Rickroll",
+          correct: true,
+        },
+      ],
+    },
+    {
+      id: 5,
       question: "Do you think my group will succeed in the project?",
       answers: [
         {
@@ -81,25 +133,35 @@ function App() {
   return (
     <div className="app">
       <div className="main">
-        {timeOut ? <h1 className="endText">
-          Thank you for playing!</h1> : (
-<>
-        <div className="top">
-
-          <div className="timer">
-            <Timer setTimeOut={setTimeOut} questionNumber={questionNumber}/>
-          </div>
-        </div>
-        <div className="bottom">
-          <Trivia
-            data={data}
-            setTimeOut={setTimeOut}
-            questionNumber={questionNumber}
-            setQuestionNumber={setQuestionNumber}
-          />
-        </div></>
+        {isGameStarted ? ( // ตรวจสอบว่าเกมเริ่มหรือยัง
+          timeOut ? (
+            <h1 className="endText">Thank you for playing!</h1>
+          ) : (
+            <>
+              <div className="top">
+                <div className="timer">
+                  <Timer setTimeOut={setTimeOut} questionNumber={questionNumber} />
+                </div>
+              </div>
+              <div className="bottom">
+                <Trivia
+                  data={data}
+                  setTimeOut={setTimeOut}
+                  questionNumber={questionNumber}
+                  setQuestionNumber={setQuestionNumber}
+                  isPlayingQuestionSound={isPlayingQuestionSound}
+                  setIsPlayingQuestionSound={setIsPlayingQuestionSound}
+                  setScore={setScore} // Pass the setScore function to Trivia
+                  score={score} // Pass the score to Trivia
+                />
+              </div>
+            </>
+          )
+        ) : (
+          <Start startGame={startGame} /> // แสดงหน้าเริ่มต้นถ้าเกมยังไม่เริ่ม
         )}
       </div>
+      <div className="score">Score: {score}</div> {/* Display the score */}
     </div>
   );
 }

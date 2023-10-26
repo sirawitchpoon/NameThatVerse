@@ -1,19 +1,14 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 
-export default function Start({ setUsername }) {
+export default function Start({ startGame }) {
   const inputRef = useRef();
 
   const handleClick = () => {
-    inputRef.current.value && setUsername(inputRef.current.value);
+      startGame(); // เริ่มเกมเมื่อกด "Start"
   };
 
   return (
     <div className="start">
-      <input
-        className="startInput"
-        placeholder="enter your name"
-        ref={inputRef}
-      />
       <button className="startButton" onClick={handleClick}>
         Start
       </button>
