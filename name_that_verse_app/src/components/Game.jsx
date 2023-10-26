@@ -32,12 +32,12 @@ export default function Game() {
           correct: false,
         },
         {
-          text: "Ricko",
-          correct: false,
+          text: "Never Gonna Give You Up",
+          correct: true,
         },
         {
           text: "Rickroll",
-          correct: true,
+          correct: false,
         },
       ],
     },
