@@ -21,7 +21,7 @@ export default function Game() {
   const data = [
     {
       id: 1,
-      question: "What's the name of the song ?",
+      question: "1. What's the name of the song ?",
       answers: [
         {
           text: "Rick and Morty",
@@ -43,7 +43,7 @@ export default function Game() {
     },
     {
       id: 2,
-      question: "What's the name of the song ?",
+      question: "2. What's the name of the song ?",
       answers: [
         {
           text: "Moonlight ",
@@ -65,7 +65,7 @@ export default function Game() {
     },
     {
       id: 3,
-      question: "What's the name of the song ?",
+      question: "3. What's the name of the song ?",
       answers: [
         {
           text: "คนจนละมีสิทธิ์มั้ยคะ",
@@ -87,45 +87,45 @@ export default function Game() {
     },
     {
       id: 4,
-      question: "What's the name of the song ?",
+      question: "4. What's the name of the song ?",
       answers: [
         {
-          text: "N---a",
+          text: "N---a (I mean Ninja)",
           correct: false,
         },
         {
-          text: "still nope",
+          text: "Darari",
+          correct: true,
+        },
+        {
+          text: "Daranee",
           correct: false,
         },
         {
-          text: "Yes, why not",
-          correct: true,
-        },
-        {
-          text: "another Rickroll",
-          correct: true,
+          text: "DaoMeeWaiBherng",
+          correct: false,
         },
       ],
     },
     {
       id: 5,
-      question: "Do you think my group will succeed in the project?",
+      question: "5. What's the name of the song ?",
       answers: [
         {
-          text: "nope",
-          correct: false,
-        },
-        {
-          text: "still nope",
-          correct: false,
-        },
-        {
-          text: "Yes, why not",
+          text: "seven",
           correct: true,
         },
         {
-          text: "another Rickroll",
-          correct: true,
+          text: "eight",
+          correct: false,
+        },
+        {
+          text: "nine",
+          correct: false,
+        },
+        {
+          text: "ten",
+          correct: false,
         },
       ],
     },
@@ -136,7 +136,11 @@ export default function Game() {
       <div className="main">
         {isGameStarted ? ( // ตรวจสอบว่าเกมเริ่มหรือยัง
           timeOut ? (
-            <h1 className="endText">Thank you for playing!</h1>
+              <h1 className="endText">
+                Thank you for playing!
+                <br />
+                <span>Your score is: {score}</span>
+              </h1>
           ) : (
             <>
               <div className="top">
@@ -162,7 +166,6 @@ export default function Game() {
           <Start startGame={startGame} /> // แสดงหน้าเริ่มต้นถ้าเกมยังไม่เริ่ม
         )}
       </div>
-      <div className="score">Score: {score}</div> {/* Display the score */}
     </div>
   );
 }
