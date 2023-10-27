@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // เน
 import Login from "./components/Login";
 import Spotify from "./components/Spotify";
 import Game from "./components/Game";
-
 import { reducerCases } from "./utils/Constants";
 import { useStateProvider } from "./utils/StateProvider";
 
 export default function App() {
   const [{ token }, dispatch] = useStateProvider();
+  
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -26,6 +26,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={token ? <Spotify /> : <Login />} />
         <Route path="/game" element={<Game />} />
+        <Route path="data/">
+      </Route>
       </Routes>
     </Router>
   );
