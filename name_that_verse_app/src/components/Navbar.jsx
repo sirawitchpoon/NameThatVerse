@@ -69,7 +69,7 @@ const Container = styled.div`
   }
 
   .song-guesser {
-    background-color: green;
+    background-color: purple;
     padding: 0.3rem 0.4rem;
     padding-right: 1rem;
     border-radius: 2rem;
